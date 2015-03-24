@@ -1,3 +1,4 @@
+-- Creation des tables
 create table UTILISATEUR(
 	id int PRIMARY KEY,
 	estAdmin int default 0,
