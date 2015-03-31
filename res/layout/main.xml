@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:text="Question 1 / 20"
+            android:textSize="16dip"
+            android:gravity="center"
+            android:paddingTop="30dip"
+            android:layout_columnSpan="4"
+            android:layout_width="fill_parent"
+            android:layout_gravity="left"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_height="50dip" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="15dip"
+            android:id="@+id/progressBar3"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <TextView
+            android:text="Qui est l'orang-outan dans 'Le livre de la jungle' ?"
+            android:textSize="16dip"
+            android:gravity="center"
+            android:paddingTop="80dip"
+            android:paddingBottom="30dip"
+            android:layout_columnSpan="4"
+            android:layout_width="fill_parent"
+            android:layout_gravity="left"
+            android:layout_row="3"
+            android:layout_column="0" />
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_row="5"
+            android:layout_column="0">
+
+            <!-- 2 columns -->
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:weightSum="1.0">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:text="Bagheera"
+                    android:layout_weight=".5"
+                    android:paddingTop="40dip"
+                    android:paddingBottom="40dip" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:text="Kaa"
+                    android:layout_weight=".5"
+                    android:paddingTop="40dip"
+                    android:paddingBottom="40dip" />
+            </TableRow>
+
+            <!-- 2 columns -->
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:weightSum="1.0">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:text="Shere Khan"
+                    android:layout_weight=".5"
+                    android:paddingTop="40dip"
+                    android:paddingBottom="40dip" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:text="Roi Louie"
+                    android:layout_weight=".5"
+                    android:paddingTop="40dip"
+                    android:paddingBottom="40dip" />
+            </TableRow>
+
+        </TableLayout>
+    </TableLayout>
+
+</LinearLayout>
+
