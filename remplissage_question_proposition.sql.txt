@@ -1,0 +1,34 @@
+delete from proposition;
+delete from question;
+
+drop sequence n_quest;
+
+create sequence n_quest start with 1 increment by 1;
+create sequence n_prop_pos start with 1 maxvalue 4 minvalue 1 increment by 1 cycle;
+create sequence n_prop start with 1 increment by 1;
+
+insert into question values(n_quest.nextval, 'Qui est l\'ourang-outang dans "Le livre de la jungle"?');
+insert into question values(n_quest.nextval, 'Lequel de ces films n\'est pas un film avec Louis de Funès?');
+insert into question values(n_quest.nextval, 'Dans le manga "Naruto", comment s\'appelle le père de Kakashi Hitake?');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+
+insert into proposition values(n_prop.nextval, 'Bagheera', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Kaa', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Shere Khan', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Roi Louie', n_prop_pos.nextval);
+insert into proposition values(n_prop.nextval, '', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, '', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, '', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, '', n_prop_pos.nextval);
