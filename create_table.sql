@@ -21,7 +21,8 @@ create table QUESTIONNAIRE(
 create table STATSHISTORIQUE(
 	id int PRIMARY KEY,
 	intitule varchar(30),
-	valeur int);
+	valeur int,
+	date_maj DATETIME);
 
 create table PROPOSITION(
 	id int PRIMARY KEY,
@@ -33,9 +34,9 @@ create table REPONSE(
   	CONSTRAINT fk1 FOREIGN KEY (idR) REFERENCES PROPOSITION(id),
 	dateR date);
 
--- drop table questionnaire;
--- drop table question;
+-- drop table reponse;
 -- drop table proposition;
 -- drop table statshistorique;
+-- drop table questionnaire;
+-- drop table question;
 -- drop table utilisateur;
--- drop table reponse;
