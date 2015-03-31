@@ -1,0 +1,55 @@
+delete from proposition;
+delete from question;
+
+drop sequence n_quest;
+
+create sequence n_quest start with 1 increment by 1;
+create sequence n_prop_pos start with 1 maxvalue 4 minvalue 1 increment by 1 cycle;
+create sequence n_prop start with 1 increment by 1;
+
+insert into question values(n_quest.nextval, 'Qui est l\'ourang-outang dans "Le livre de la jungle"?');
+insert into question values(n_quest.nextval, 'Lequel de ces films n\'est pas un film avec Louis de Funès?');
+insert into question values(n_quest.nextval, 'Dans le manga "Naruto", comment s\'appelle le père de Kakashi Hitake?');
+insert into question values(n_quest.nextval, 'Dans quel pays se trouve le circuit automobile de Zandvoort ?');
+insert into question values(n_quest.nextval, 'Dans quelle ville se trouve la fontaine de Trevi ?');
+insert into question values(n_quest.nextval, 'En quoi un nihiliste croit-il ?');
+insert into question values(n_quest.nextval, 'Quelle est la plus grande tortue marine connue à ce jour ?');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+insert into question values(n_quest.nextval, '');
+
+-- Proposition pour : Qui est l'ourang-outang dans "Le livre de la jungle"?
+insert into proposition values(n_prop.nextval, 'Bagheera', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Kaa', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Shere Khan', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Roi Louie', n_prop_pos.nextval);  -- Reponse correcte
+
+-- Proposition pour : Dans quel pays se trouve le circuit automobile de Zandvoort ?
+insert into proposition values(n_prop.nextval, 'La Belgique', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'La Suisse', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Les Pays-Bas', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'La France', n_prop_pos.nextval);
+
+-- Proposition pour : Dans quelle ville se trouve la fontaine de Trevi ?
+insert into proposition values(n_prop.nextval, 'Rome', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Venise', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'Barcelone', n_prop_pos.nextval); 
+insert into proposition values(n_prop.currval, 'Seville', n_prop_pos.nextval); -- Reponse correcte
+
+-- Proposition pour : En quoi un nihiliste croit-il ? 
+insert into proposition values(n_prop.nextval, 'En la chance', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'En tout', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'En rien', n_prop_pos.nextval); 
+insert into proposition values(n_prop.currval, 'En lui-même', n_prop_pos.nextval); -- Reponse correcte
+
+-- Proposition pour : Quelle est la plus grande tortue marine connue à ce jour ?
+insert into proposition values(n_prop.nextval, 'La tortue franche', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'La tortue ninja', n_prop_pos.nextval);
+insert into proposition values(n_prop.currval, 'La tortue luth', n_prop_pos.nextval); -- Reponse correcte
+insert into proposition values(n_prop.currval, 'La tortue argneuse', n_prop_pos.nextval);

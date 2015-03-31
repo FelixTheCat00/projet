@@ -30,7 +30,11 @@ create table STATS_HISTORIQUE(
 	idStats int PRIMARY KEY,
 	intitule varchar(30),
 	valeur int,
+<<<<<<< HEAD
 	dateSynchro date);
+=======
+	date_maj DATETIME);
+>>>>>>> origin/master
 
 create table PROPOSITION(
 	idProp int,
@@ -53,6 +57,7 @@ create table REPONSE(
   	CONSTRAINT fk2 FOREIGN KEY (idUser) REFERENCES UTILISATEUR(idUser),
   	CONSTRAINT fk3 FOREIGN KEY (idQuestionnaire) REFERENCES QUESTIONNAIRE(idQuestionnaire));
 
+<<<<<<< HEAD
 
 -- drop table question_questionnaire;
 -- drop table reponse;
@@ -61,3 +66,13 @@ create table REPONSE(
 -- drop table question;
 -- drop table stats_historique;
 -- drop table utilisateur;
+=======
+-- drop table reponse;
+-- drop table proposition;
+-- drop table statshistorique;
+-- drop table questionnaire;
+-- drop table question;
+-- drop table utilisateur;
+-- drop table rjuste;
+
+>>>>>>> origin/master
