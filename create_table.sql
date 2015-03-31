@@ -9,33 +9,40 @@ create table UTILISATEUR(
 	dateInscription date);
 
 create table QUESTION(
-	id int PRIMARY KEY,
+	idQuestion int PRIMARY KEY,
 	libelle varchar(30));
 
 create table QUESTIONNAIRE(
-	id int PRIMARY KEY,
+	idQuesttionnaire int PRIMARY KEY,
 	titre varchar(30),
 	idQ int,
-	CONSTRAINT fk FOREIGN KEY (idQ) REFERENCES QUESTION(id));
+	CONSTRAINT fk FOREIGN KEY (idQuesttionnaire) REFERENCES QUESTION(idQuestion));
 
 create table STATSHISTORIQUE(
-	id int PRIMARY KEY,
+	idStats int PRIMARY KEY,
 	intitule varchar(30),
 	valeur int);
 
 create table PROPOSITION(
-	id int PRIMARY KEY,
-	ordre int,
+	idProp int PRIMARY KEY,
+	numero int,
 	libelle varchar(30));
+
+create table RJuste(
+	idQuestion int PRIMARY KEY,
+	numero int,
+	CONSTRAINT fk FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion),
+	CONSTRAINT fk FOREIGN KEY (numero) REFERENCES PROPOSITION(numero));
 
 create table REPONSE(
 	idR int PRIMARY KEY,
-  	CONSTRAINT fk1 FOREIGN KEY (idR) REFERENCES PROPOSITION(id),
+  	CONSTRAINT fk1 FOREIGN KEY (idR) REFERENCES PROPOSITION(idProp),
 	dateR date);
 
 -- drop table questionnaire;
 -- drop table question;
+-- drop table reponse;
 -- drop table proposition;
 -- drop table statshistorique;
 -- drop table utilisateur;
--- drop table reponse;
+-- drop table rjuste;
