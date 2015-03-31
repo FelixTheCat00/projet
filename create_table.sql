@@ -1,6 +1,6 @@
 -- Creation des tables
 create table UTILISATEUR(
-	id int PRIMARY KEY,
+	idUser int PRIMARY KEY,
 	estAdmin int default 0,
 	nom varchar(30) NOT NULL,
 	prenom varchar(30) NOT NULL,
@@ -13,36 +13,51 @@ create table QUESTION(
 	libelle varchar(30));
 
 create table QUESTIONNAIRE(
-	idQuesttionnaire int PRIMARY KEY,
+	idQuestionnaire int PRIMARY KEY,
 	titre varchar(30),
-	idQ int,
-	CONSTRAINT fk FOREIGN KEY (idQuesttionnaire) REFERENCES QUESTION(idQuestion));
+	idUser int,
+	CONSTRAINT fk5 FOREIGN KEY (idUser) REFERENCES UTILISATEUR(idUser));
 
-create table STATSHISTORIQUE(
+create table QUESTION_QUESTIONNAIRE(
+	idQQ int PRIMARY KEY,
+  idQuestionnaire int,
+	idQuestion int,
+	ordre int,
+	CONSTRAINT fk6 FOREIGN KEY (idQuestionnaire) REFERENCES QUESTIONNAIRE(idQuestionnaire),
+	CONSTRAINT fk7 FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion));
+
+create table STATS_HISTORIQUE(
 	idStats int PRIMARY KEY,
 	intitule varchar(30),
-	valeur int);
+	valeur int,
+	dateSynchro date);
 
 create table PROPOSITION(
-	idProp int PRIMARY KEY,
-	numero int,
-	libelle varchar(30));
-
-create table RJuste(
-	idQuestion int PRIMARY KEY,
-	numero int,
-	CONSTRAINT fk FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion),
-	CONSTRAINT fk FOREIGN KEY (numero) REFERENCES PROPOSITION(numero));
+	idProp int,
+	idQuestion int,
+	ordre int,
+	vrai int,
+	libelle varchar(30),
+	CONSTRAINT pk PRIMARY KEY (idProp),
+	CONSTRAINT fk4 FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion));
 
 create table REPONSE(
 	idR int PRIMARY KEY,
-  	CONSTRAINT fk1 FOREIGN KEY (idR) REFERENCES PROPOSITION(idProp),
-	dateR date);
+	dateR date,
+	idProp int,
+	idUser int,
+	ordre int,
+	libelle varchar(30),
+	idQuestionnaire int,
+  	CONSTRAINT fk1 FOREIGN KEY (idProp) REFERENCES PROPOSITION(idProp),
+  	CONSTRAINT fk2 FOREIGN KEY (idUser) REFERENCES UTILISATEUR(idUser),
+  	CONSTRAINT fk3 FOREIGN KEY (idQuestionnaire) REFERENCES QUESTIONNAIRE(idQuestionnaire));
 
--- drop table questionnaire;
--- drop table question;
+
+-- drop table question_questionnaire;
 -- drop table reponse;
 -- drop table proposition;
--- drop table statshistorique;
+-- drop table questionnaire;
+-- drop table question;
+-- drop table stats_historique;
 -- drop table utilisateur;
--- drop table rjuste;
